@@ -79,7 +79,7 @@ persistence:
   # type: options are statefulset or deployment
   type: statefulset
   config:
-    enabled: true
+    enabled: false
     ## media-common configuration data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
