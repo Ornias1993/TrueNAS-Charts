@@ -42,3 +42,25 @@ spec:
   storageClassName: {{ if (eq "-" .Values.persistence.media.storageClass) }}""{{- else }}{{ .Values.persistence.media.storageClass | quote}}{{- end }}
   {{- end }}
 {{- end -}}
+{{- if and .Values.persistence.downloads.enabled (not .Values.persistence.downloads.existingClaim) }}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "media-common.fullname" . }}-downloads
+  {{- if .Values.persistence.downloads.skipuninstall }}
+  annotations:
+    "helm.sh/resource-policy": keep
+  {{- end }}
+  labels:
+  {{- include "media-common.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - {{ .Values.persistence.downloads.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.downloads.size | quote }}
+  {{- if .Values.persistence.downloads.storageClass }}
+  storageClassName: {{ if (eq "-" .Values.persistence.downloads.storageClass) }}""{{- else }}{{ .Values.persistence.downloads.storageClass | quote}}{{- end }}
+  {{- end }}
+{{- end -}}

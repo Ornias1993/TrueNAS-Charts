@@ -85,12 +85,24 @@ spec:
           persistentVolumeClaim:
             claimName: {{ if .Values.persistence.config.existingClaim }}{{ .Values.persistence.config.existingClaim }}{{- else }}{{ template "media-common.fullname" . }}{{- end }}
           {{- else }}
-          emptyDir: {}
+          hostPath:
+            path: /mnt/tank/pv/{{ template "media-common.fullname" . }}
           {{- end }}
         {{- if .Values.persistence.media.enabled }}
         - name: media
           persistentVolumeClaim:
             claimName: {{ if .Values.persistence.media.existingClaim }}{{ .Values.persistence.media.existingClaim }}{{- else }}{{ template "media-common.fullname" . }}-media{{- end }}
+          {{- else }}
+          hostPath:
+            path: /mnt/tank/library
+        {{- end }}
+        {{- if .Values.persistence.downloads.enabled }}
+        - name: media
+          persistentVolumeClaim:
+            claimName: {{ if .Values.persistence.downloads.existingClaim }}{{ .Values.persistence.downloads.existingClaim }}{{- else }}{{ template "downloads-common.fullname" . }}-downloads{{- end }}
+          {{- else }}
+          hostPath:
+            path: /mnt/tank/downloads
         {{- end }}
         {{- include "media-common.additionalVolumes" . | nindent 8 }}
       {{- with .Values.nodeSelector }}
