@@ -17,7 +17,7 @@ maintainers:
     url: https://github.com/dirtycajunrice
 dependencies:
   - name: media-common
-    repository: https://k8s-at-home.com/charts/
+    repository: https://ornias1993.github.io/TrueNAS-Charts/
     version: ^1.0.0
     alias: ombi
 annotations:
