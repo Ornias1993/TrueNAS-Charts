@@ -3149,21 +3149,6 @@ entries:
     version: 1.0.0
   media-common:
   - apiVersion: v2
-    created: "2020-10-14T21:33:54.08650637Z"
-    description: Common dependancy chart for media ecosystem containers
-    digest: 9712525ccc1150f93b45462dc0860530da8a2041a3dfb491a72dc5677fc90eef
-    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common
-    keywords:
-    - media-common
-    maintainers:
-    - email: nick@cajun.pro
-      name: DirtyCajunRice
-    name: media-common
-    type: application
-    urls:
-    - https://github.com/Ornias1993/TrueNAS-Charts/releases/download/media-common-1.3.2/media-common-1.3.2.tgz
-    version: 1.3.2
-  - apiVersion: v2
     created: "2020-10-07T15:26:22.085351642Z"
     dependencies:
     - alias: openvpn
