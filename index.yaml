@@ -4058,6 +4058,41 @@ entries:
           email: nick@cajun.pro
     apiVersion: v2
     appVersion: 4.0.471
+    created: "2020-10-14T21:44:25.576091571Z"
+    dependencies:
+    - alias: ombi
+      name: media-common
+      repository: https://ornias1993.github.io/TrueNAS-Charts/
+      version: ^1.0.0
+    description: Want a Movie or TV Show on Plex or Emby? Use Ombi!
+    digest: c3460794515081cedaf34941c3e83d75d44fd5754665f8f73b4b379a8df88a4b
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/ombi
+    icon: https://github.com/tidusjar/Ombi/blob/feature/v4/src/Ombi/wwwroot/images/ms-icon-310x310.png?raw=true
+    keywords:
+    - ombi
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+      url: https://github.com/dirtycajunrice
+    name: ombi
+    sources:
+    - https://github.com/tidusjar/Ombi
+    - https://hub.docker.com/r/linuxserver/ombi
+    type: application
+    urls:
+    - https://github.com/Ornias1993/TrueNAS-Charts/releases/download/ombi-4.0.3/ombi-4.0.3.tgz
+    version: 4.0.3
+  - annotations:
+      artifacthub.io/links: |
+        - name: App Source
+          url: https://github.com/tidusjar/Ombi
+        - name: Default Docker Image
+          url: https://hub.docker.com/r/linuxserver/ombi
+      artifacthub.io/maintainers: |
+        - name: Nicholas St. Germain
+          email: nick@cajun.pro
+    apiVersion: v2
+    appVersion: 4.0.471
     created: "2020-10-13T00:37:37.447215949Z"
     dependencies:
     - alias: ombi
